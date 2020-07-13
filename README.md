@@ -35,7 +35,11 @@ The package contains 3 builds.
 const { genOtp, checkOtp } = require('@joph-auth/nd-otp-webcrypto');
 
 async function example() {
-  //TODO
+  const base32Key = 'Q4CU IAEF WX36 N2AP LBGT K7CI MLDG DBHJ';
+    const otp = await genOtp(base32Key);
+    console.log(otp);
+
+  // TODO: checkOtp
 }
 ```
 
@@ -44,7 +48,11 @@ async function example() {
 import { genOtp, checkOtp } from '@joph-auth/nd-otp-webcrypto/dist/lib-esm';
 
 async function example() {
-  //TODO
+  const base32Key = 'Q4CU IAEF WX36 N2AP LBGT K7CI MLDG DBHJ';
+  const otp = await genOtp(base32Key);
+  console.log(otp);
+
+  //TODO: checkOtp
 }
 ```
 
@@ -60,7 +68,13 @@ This will instantiate the `window.ndOtp` object.
   <body>
     <script src="path/to/nd-otp.min.js"></script>
     <script>
-      //TODO
+        const base32Key = 'Q4CU IAEF WX36 N2AP LBGT K7CI MLDG DBHJ';
+        ndOtp.genOtp(base32Key).then(otp => {
+          console.log(otp);
+        });
+
+        //TODO: checkOtp
+
     </script>
   </body>
 </html>
